@@ -2,9 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles.css";
 import { MainApp } from "./MainApp";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <MainApp />
+    <BrowserRouter>
+      <MainApp />
+    </BrowserRouter>
   </React.StrictMode>
 );
