@@ -1,28 +1,14 @@
 import { BirdsList } from "../components/BirdsList";
+import { useBirds } from "../hooks/useBirds";
 
 export function BirdsPage() {
-  const dummies = [
-    {
-      id: 1,
-      name: "Chincol",
-      description:
-        "Son aves solitarias, que sólo forman parejas en época de reproducción. Se alimentan principalmente de semillas y gusanos.",
-      area: "Praderas y bosques",
-    },
-    {
-      id: 2,
-      name: "Tenca",
-      description:
-        "Gran cantora, puede imitar el sonido de otros pájaros. Suele anidar en árboles con espinas, y pone 3 huevos.",
-      area: "Laderas de cerros con arbustos",
-    },
-  ];
+  const { birds } = useBirds();
   return (
     <>
       <div className="container my-4">
-        <h3>Pulmapedia</h3>
+        <h3>{"Pulmapedia"}</h3>
         <div className="row">
-          <BirdsList birds={dummies} />
+          <BirdsList birds={birds} />
         </div>
       </div>
     </>
