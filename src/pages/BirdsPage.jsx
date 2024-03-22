@@ -6,7 +6,6 @@ export function BirdsPage() {
   return (
     <>
       <div className="container my-4">
-        <h3>{"Pulmapedia"}</h3>
         <div className="row">
           <BirdsList birds={birds} />
         </div>
