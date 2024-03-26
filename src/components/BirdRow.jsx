@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export const BirdRow = ({ id, name, description, area }) => {
   return (
     <tr>
@@ -6,9 +8,13 @@ export const BirdRow = ({ id, name, description, area }) => {
       <td>{description}</td>
       <td>{area}</td>
       <td>
-        <button type="button" className="btn btn-secondary btn-info">
-          Ver más
-        </button>
+        <NavLink
+          className={"btn btn-secondary btn-info"}
+          to={"/pulmapedia/" + id}
+        >
+          {" "}
+          Ver más{" "}
+        </NavLink>
       </td>
     </tr>
   );

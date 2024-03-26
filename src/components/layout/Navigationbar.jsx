@@ -31,7 +31,7 @@ export const Navigationbar = () => {
                   Acerca de
                 </NavLink>
               </li>
-              <li className="nav-item dropdown">
+              {/*<li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
                   href="#"
@@ -61,10 +61,10 @@ export const Navigationbar = () => {
                     </a>
                   </li>
                 </ul>
-              </li>
+  </li>*/}
               <li className="nav-item">
                 <a className="nav-link disabled" aria-disabled="true">
-                  Disabled
+                  Proximamente
                 </a>
               </li>
             </ul>
