@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export const Navigationbar = () => {
   return (
     <>
@@ -20,14 +22,14 @@ export const Navigationbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <NavLink className="nav-link" to="/pulmapedia">
                   Home
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
+                <NavLink className="nav-link" to="pulmapedia/aboutus">
+                  Acerca de
+                </NavLink>
               </li>
               <li className="nav-item dropdown">
                 <a
