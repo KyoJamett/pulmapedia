@@ -15,6 +15,7 @@ export const Bird = ({ birds = [], initialBirdSelected }) => {
     <>
       <div className="container my-4">
         <h4>{birdSelected.name}</h4>
+        <p>{birdSelected.more}</p>
       </div>
     </>
   );
