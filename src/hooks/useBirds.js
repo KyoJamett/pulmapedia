@@ -15,8 +15,16 @@ const birds = [
   },
 ];
 
+const initialBirdSelected = {
+  id: 0,
+  name: "no name",
+  description: "no description",
+  area: "no area",
+};
+
 export const useBirds = () => {
   return {
     birds,
+    initialBirdSelected,
   };
 };

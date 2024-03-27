@@ -12,8 +12,7 @@ export const BirdRow = ({ id, name, description, area }) => {
           className={"btn btn-secondary btn-info"}
           to={"/pulmapedia/" + id}
         >
-          {" "}
-          Ver más{" "}
+          Ver más
         </NavLink>
       </td>
     </tr>

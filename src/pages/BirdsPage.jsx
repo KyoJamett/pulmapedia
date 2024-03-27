@@ -1,8 +1,7 @@
 import { BirdsList } from "../components/BirdsList";
 import { useBirds } from "../hooks/useBirds";
 
-export function BirdsPage() {
-  const { birds } = useBirds();
+export function BirdsPage({ birds }) {
   return (
     <>
       <div className="container my-4">
