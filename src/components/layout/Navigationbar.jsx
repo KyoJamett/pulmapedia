@@ -8,18 +8,22 @@ export const Navigationbar = () => {
           <a className="navbar-brand" href="#">
             Pulmapedia
           </a>
+
+          {/*-------------Collapsibe Button---------------- */}
           <button
             className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
+            data-toggle="collapse"
+            data-target="#navbarBirds"
+            aria-controls="navbarBirds"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+
+          {/*-------------NavBar Links---------------- */}
+          <div className="collapse navbar-collapse" id="navbarBirds">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink className="nav-link" to="/pulmapedia">
