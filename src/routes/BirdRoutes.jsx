@@ -6,13 +6,16 @@ import { useBirds } from "../hooks/useBirds";
 import { Bird } from "../pages/Bird";
 
 export const BirdRoutes = () => {
-  const { birds, initialBirdSelected } = useBirds();
+  const { birds, initialBirdSelected, aboutUs } = useBirds();
   return (
     <>
       <Navigationbar />
       <Routes>
         <Route path="pulmapedia" element={<BirdsPage birds={birds} />} />
-        <Route path="pulmapedia/aboutus" element={<AboutUsPage />} />
+        <Route
+          path="pulmapedia/aboutus"
+          element={<AboutUsPage aboutUs={aboutUs} />}
+        />
         <Route
           path="pulmapedia/:id"
           element={

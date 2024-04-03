@@ -33,9 +33,14 @@ const initialBirdSelected = {
   more: "no info",
 };
 
+const aboutUs = {
+  desc: "Pulmapedia es un proyecto personal que busca crear una enciclopedia de las aves de mi región, la region de Valparaíso. Esto nace con la idea de tener a la mano una suerte de pokédex para aquellas personas que no sepan reconocer un ave cuando la vean.",
+};
+
 export const useBirds = () => {
   return {
     birds,
     initialBirdSelected,
+    aboutUs,
   };
 };
