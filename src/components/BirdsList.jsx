@@ -1,6 +1,27 @@
+import { useState } from "react";
 import { BirdRow } from "./BirdRow";
 
 export const BirdsList = ({ birds = [] }) => {
+  const [searchInput, setSearchInput] = useState("");
+  const [filteredResults, setFilteredResults] = useState([]);
+  console.log(searchInput);
+  /*const searchItems = (searchValue) => {
+    setSearchInput(searchValue);
+    if (searchInput !== "") {
+      const filteredData = birds.filter((item) => {
+        return Object.values(item.name)
+          .join("")
+          .toLowerCase()
+          .includes(searchInput.toLowerCase());
+      });
+      setFilteredResults(filteredData);
+      console.log(searchInput);
+      console.log(filteredResults);
+    } else {
+      setFilteredResults(birds);
+    }
+  };*/
+
   return (
     <>
       <h3>Lista de Especies</h3>
@@ -12,11 +33,11 @@ export const BirdsList = ({ birds = [] }) => {
             type="search"
             placeholder="Search"
             aria-label="Search"
-            onChange={(e) => searchItems(e.target.value)}
+            onChange={(e) => setSearchInput(e.target.value)}
           />
-          <button className="btn btn-outline-success" type="submit">
+          {/*<button className="btn btn-outline-success" type="submit">
             Search
-          </button>
+  </button>*/}
         </form>
       </div>
 
@@ -30,15 +51,21 @@ export const BirdsList = ({ birds = [] }) => {
           </tr>
         </thead>
         <tbody>
-          {birds.map(({ id, name, description, area }) => (
-            <BirdRow
-              key={id}
-              id={id}
-              name={name}
-              description={description}
-              area={area}
-            />
-          ))}
+          {birds
+            .filter((bird) => {
+              return searchInput.toLowerCase() === ""
+                ? bird
+                : bird.name.toLowerCase().includes(searchInput);
+            })
+            .map(({ id, name, description, area }) => (
+              <BirdRow
+                key={id}
+                id={id}
+                name={name}
+                description={description}
+                area={area}
+              />
+            ))}
         </tbody>
       </table>
     </>
