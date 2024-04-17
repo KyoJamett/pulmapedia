@@ -50,6 +50,8 @@ export const BirdsList = ({ birds = [] }) => {
               <th>Descripcion</th>
               <th>Zona</th>
               <th>Más info</th>
+              <th>Editar</th>
+              <th>Eliminar</th>
             </tr>
           </thead>
           <tbody>
