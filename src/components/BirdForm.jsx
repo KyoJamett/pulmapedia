@@ -1,15 +1,17 @@
 import { useBirds } from "../hooks/useBirds";
 
 export const BirdForm = ({ id, name, description, area, more }) => {
-  const { initialBirdForm } = useBirds();
+  const onInputChange = ({ target }) => {
+    console.log(target.value);
+  };
   return (
-    <form onSubmit={onSubmit}>
+    <form>
       <input
         className="form-control my-3 w-75"
         placeholder="Nombre"
         name="name"
         value={name}
-        /*onChange={onInputChange}*/
+        onChange={onInputChange}
       />
 
       <input
@@ -17,7 +19,7 @@ export const BirdForm = ({ id, name, description, area, more }) => {
         placeholder="Descripción"
         name="description"
         value={description}
-        /*onChange={onInputChange}*/
+        onChange={onInputChange}
       />
 
       <input
@@ -25,7 +27,7 @@ export const BirdForm = ({ id, name, description, area, more }) => {
         placeholder="Zona"
         name="area"
         value={area}
-        /*onChange={onInputChange}*/
+        onChange={onInputChange}
       />
 
       <input
@@ -33,7 +35,7 @@ export const BirdForm = ({ id, name, description, area, more }) => {
         placeholder="Detalle"
         name="more"
         value={more}
-        /*onChange={onInputChange}*/
+        onChange={onInputChange}
       />
 
       <input type="hidden" name="id" value={id} />
