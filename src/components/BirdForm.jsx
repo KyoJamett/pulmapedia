@@ -1,8 +1,18 @@
+import { useState } from "react";
 import { useBirds } from "../hooks/useBirds";
 
-export const BirdForm = ({ id, name, description, area, more }) => {
+export const BirdForm = () => {
+  const { initialBirdForm } = useBirds();
+  const [birdForm, setBirdForm] = useState(initialBirdForm);
+  const { id, name, description, area, more } = birdForm;
+
   const onInputChange = ({ target }) => {
     console.log(target.value);
+    const { name, value } = target;
+    setBirdForm({
+      ...birdForm,
+      [name]: value,
+    });
   };
   return (
     <form>

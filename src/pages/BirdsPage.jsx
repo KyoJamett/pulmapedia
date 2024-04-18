@@ -10,7 +10,7 @@ export function BirdsPage({ birds }) {
           <BirdsList birds={birds} />
         </div>
         <div className="row">
-          <BirdForm birds={birds} />
+          <BirdForm />
         </div>
       </div>
     </>
