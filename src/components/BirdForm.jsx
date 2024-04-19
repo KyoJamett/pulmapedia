@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useBirds } from "../hooks/useBirds";
 
-export const BirdForm = () => {
+export const BirdForm = ({ handlerAddBird }) => {
   const { initialBirdForm } = useBirds();
   const [birdForm, setBirdForm] = useState(initialBirdForm);
   const { id, name, description, area, more } = birdForm;
@@ -14,8 +14,24 @@ export const BirdForm = () => {
       [name]: value,
     });
   };
+
+  //----------------FUNCION QUE SE DISPARA AL APRETAR CREAR O EDITAR EN EL FORMULARIO-------------
+  const onSubmit = (event) => {
+    event.preventDefault();
+    //-----------condicional para checkear que los campos del formulario no estén vacios--------
+    if (!name || !description || !area || !more) {
+      alert("Debe completar los campos del formulario!");
+      return;
+    }
+    //------------funcion handler para agregar el objeto a la lista de especies------------------
+    handlerAddBird(birdForm);
+    //console.log(birdForm);
+    //------------se limpian los campos al terminar la acción------------------------------------
+    setBirdForm(initialBirdForm);
+  };
+
   return (
-    <form>
+    <form onSubmit={onSubmit}>
       <input
         className="form-control my-3 w-75"
         placeholder="Nombre"

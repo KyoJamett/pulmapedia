@@ -3,6 +3,7 @@ import { BirdsList } from "../components/BirdsList";
 import { useBirds } from "../hooks/useBirds";
 
 export function BirdsPage({ birds }) {
+  const { handlerAddBird } = useBirds();
   return (
     <>
       <div className="container my-4">
@@ -10,7 +11,7 @@ export function BirdsPage({ birds }) {
           <BirdsList birds={birds} />
         </div>
         <div className="row">
-          <BirdForm />
+          <BirdForm handlerAddBird={handlerAddBird} />
         </div>
       </div>
     </>

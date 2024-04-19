@@ -34,7 +34,6 @@ const initialBirdSelected = {
 };
 
 const initialBirdForm = {
-  id: 0,
   name: "",
   description: "",
   area: "",
@@ -46,10 +45,15 @@ const aboutUs = {
 };
 
 export const useBirds = () => {
+  const handlerAddBird = (bird) => {
+    console.log(bird);
+  };
+
   return {
     birds,
     initialBirdSelected,
     aboutUs,
     initialBirdForm,
+    handlerAddBird,
   };
 };
