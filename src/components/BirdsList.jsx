@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { BirdRow } from "./BirdRow";
 
-export const BirdsList = ({ handlerRemoveBird, birds = [] }) => {
+export const BirdsList = ({
+  birds = [],
+  handlerRemoveBird,
+  handlerBirdSelectedForm,
+}) => {
   const [searchInput, setSearchInput] = useState("");
 
   console.log(searchInput);
@@ -42,14 +46,16 @@ export const BirdsList = ({ handlerRemoveBird, birds = [] }) => {
                   ? bird
                   : bird.name.toLowerCase().includes(searchInput);
               })
-              .map(({ id, name, description, area }) => (
+              .map(({ id, name, description, area, more }) => (
                 <BirdRow
                   key={id}
                   id={id}
                   name={name}
                   description={description}
                   area={area}
+                  more={more}
                   handlerRemoveBird={handlerRemoveBird}
+                  handlerBirdSelectedForm={handlerBirdSelectedForm}
                 />
               ))}
           </tbody>

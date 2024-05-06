@@ -1,6 +1,14 @@
 import { NavLink } from "react-router-dom";
 
-export const BirdRow = ({ id, name, description, area, handlerRemoveBird }) => {
+export const BirdRow = ({
+  id,
+  name,
+  description,
+  area,
+  more,
+  handlerRemoveBird,
+  handlerBirdSelectedForm,
+}) => {
   const onRemoveBird = (id) => {
     handlerRemoveBird(id);
   };
@@ -19,7 +27,19 @@ export const BirdRow = ({ id, name, description, area, handlerRemoveBird }) => {
         </NavLink>
       </td>
       <td>
-        <button type="button" className="btn btn-secondary btn-sm">
+        <button
+          type="button"
+          className="btn btn-secondary btn-sm"
+          onClick={() =>
+            handlerBirdSelectedForm({
+              id: id,
+              name: name,
+              description: description,
+              area: area,
+              more: more,
+            })
+          }
+        >
           Editar
         </button>
       </td>

@@ -13,6 +13,7 @@ export function BirdsPage() {
     initialBirdForm,
     handlerAddBird,
     handlerRemoveBird,
+    handlerBirdSelectedForm,
   } = useBirds();
 
   return (
@@ -24,7 +25,11 @@ export function BirdsPage() {
               No hay registros en el sistema
             </div>
           ) : (
-            <BirdsList birds={birds} handlerRemoveBird={handlerRemoveBird} />
+            <BirdsList
+              birds={birds}
+              handlerRemoveBird={handlerRemoveBird}
+              handlerBirdSelectedForm={handlerBirdSelectedForm}
+            />
           )}
         </div>
         <div className="row">

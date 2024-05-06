@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import { birdsReducer } from "../reducers/birdsReducer";
 
 const initialBirds = [
@@ -49,6 +49,7 @@ const aboutUs = {
 
 export const useBirds = () => {
   const [birds, dispatch] = useReducer(birdsReducer, initialBirds);
+  const [userSelected, setUserSelected] = useState(initialBirdForm);
 
   const handlerAddBird = (bird) => {
     console.log(bird);
@@ -66,6 +67,10 @@ export const useBirds = () => {
     });
   };
 
+  const handlerBirdSelectedForm = (bird) => {
+    console.log(bird);
+  };
+
   return {
     birds,
     initialBirds,
@@ -75,5 +80,6 @@ export const useBirds = () => {
 
     handlerAddBird,
     handlerRemoveBird,
+    handlerBirdSelectedForm,
   };
 };
