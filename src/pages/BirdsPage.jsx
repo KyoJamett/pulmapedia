@@ -19,7 +19,13 @@ export function BirdsPage() {
     <>
       <div className="container my-4">
         <div className="row">
-          <BirdsList birds={birds} handlerRemoveBird={handlerRemoveBird} />
+          {birds.length === 0 ? (
+            <div className="alert alert-warning">
+              No hay registros en el sistema
+            </div>
+          ) : (
+            <BirdsList birds={birds} handlerRemoveBird={handlerRemoveBird} />
+          )}
         </div>
         <div className="row">
           <BirdForm handlerAddBird={handlerAddBird} />
