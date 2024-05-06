@@ -1,4 +1,7 @@
-const birds = [
+import { useReducer } from "react";
+import { birdsReducer } from "../reducers/birdsReducer";
+
+const initialBirds = [
   {
     id: 1,
     name: "Chincol",
@@ -45,15 +48,23 @@ const aboutUs = {
 };
 
 export const useBirds = () => {
+  const [birds, dispatch] = useReducer(birdsReducer, initialBirds);
+
   const handlerAddBird = (bird) => {
     console.log(bird);
+    dispatch({
+      type: "addBird",
+      payload: bird,
+    });
   };
 
   return {
     birds,
+    initialBirds,
     initialBirdSelected,
     aboutUs,
     initialBirdForm,
+
     handlerAddBird,
   };
 };
