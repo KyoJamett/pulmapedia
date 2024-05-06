@@ -8,6 +8,8 @@ export const birdsReducer = (state = [], action) => {
           id: new Date().getTime(),
         },
       ];
+    case "removeBird":
+      return state.filter((user) => user.id !== action.payload);
 
     default:
       return state;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BirdRow } from "./BirdRow";
 
-export const BirdsList = ({ birds = [] }) => {
+export const BirdsList = ({ handlerRemoveBird, birds = [] }) => {
   const [searchInput, setSearchInput] = useState("");
 
   console.log(searchInput);
@@ -49,6 +49,7 @@ export const BirdsList = ({ birds = [] }) => {
                   name={name}
                   description={description}
                   area={area}
+                  handlerRemoveBird={handlerRemoveBird}
                 />
               ))}
           </tbody>

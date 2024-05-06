@@ -58,6 +58,14 @@ export const useBirds = () => {
     });
   };
 
+  const handlerRemoveBird = (id) => {
+    console.log(id);
+    dispatch({
+      type: "removeBird",
+      payload: id,
+    });
+  };
+
   return {
     birds,
     initialBirds,
@@ -66,5 +74,6 @@ export const useBirds = () => {
     initialBirdForm,
 
     handlerAddBird,
+    handlerRemoveBird,
   };
 };

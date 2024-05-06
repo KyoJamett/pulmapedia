@@ -12,13 +12,14 @@ export function BirdsPage() {
     aboutUs,
     initialBirdForm,
     handlerAddBird,
+    handlerRemoveBird,
   } = useBirds();
 
   return (
     <>
       <div className="container my-4">
         <div className="row">
-          <BirdsList birds={birds} />
+          <BirdsList birds={birds} handlerRemoveBird={handlerRemoveBird} />
         </div>
         <div className="row">
           <BirdForm handlerAddBird={handlerAddBird} />
