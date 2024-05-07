@@ -51,10 +51,11 @@ const aboutUs = {
 export const useBirds = () => {
   const [birds, dispatch] = useReducer(birdsReducer, initialBirds);
   const [birdSelected, setBirdSelected] = useState(initialBirdForm);
+  const [visibleForm, setVisibleForm] = useState(false);
 
   //------------- HANDLERADDBIRD FUNCIONA TANTO PARA AGREGAR COMO PARA EDITAR UN REGISTRO DE LA TABLA-------------------
   const handlerAddBird = (bird) => {
-    console.log(bird);
+    //console.log(bird);
 
     let type;
     if (bird.id === 0) {
@@ -67,6 +68,8 @@ export const useBirds = () => {
       type: type,
       payload: bird,
     });
+    setVisibleForm(false);
+    setBirdSelected(initialBirdForm);
   };
 
   const handlerRemoveBird = (id) => {
@@ -78,7 +81,8 @@ export const useBirds = () => {
   };
 
   const handlerBirdSelectedForm = (bird) => {
-    console.log(bird);
+    //console.log(bird);
+    setVisibleForm(true);
     setBirdSelected({ ...bird });
   };
 
@@ -88,6 +92,7 @@ export const useBirds = () => {
     initialBirdSelected,
     aboutUs,
     initialBirdForm,
+    visibleForm,
 
     handlerAddBird,
     handlerRemoveBird,
