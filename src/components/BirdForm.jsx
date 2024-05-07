@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useBirds } from "../hooks/useBirds";
 
-export const BirdForm = ({ handlerAddBird }) => {
+export const BirdForm = ({ handlerAddBird, birdSelected }) => {
   const { initialBirdForm } = useBirds();
   const [birdForm, setBirdForm] = useState(initialBirdForm);
   const { id, name, description, area, more } = birdForm;
@@ -29,6 +29,12 @@ export const BirdForm = ({ handlerAddBird }) => {
     //------------se limpian los campos al terminar la acción------------------------------------
     setBirdForm(initialBirdForm);
   };
+
+  useEffect(() => {
+    setBirdForm({
+      ...birdSelected,
+    });
+  }, [birdSelected]);
 
   return (
     <form onSubmit={onSubmit}>

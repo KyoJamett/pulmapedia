@@ -14,6 +14,7 @@ export function BirdsPage() {
     handlerAddBird,
     handlerRemoveBird,
     handlerBirdSelectedForm,
+    birdSelected,
   } = useBirds();
 
   return (
@@ -33,7 +34,10 @@ export function BirdsPage() {
           )}
         </div>
         <div className="row">
-          <BirdForm handlerAddBird={handlerAddBird} />
+          <BirdForm
+            handlerAddBird={handlerAddBird}
+            birdSelected={birdSelected}
+          />
         </div>
       </div>
     </>
