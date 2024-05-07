@@ -37,6 +37,7 @@ const initialBirdSelected = {
 };
 
 const initialBirdForm = {
+  id: 0,
   name: "",
   description: "",
   area: "",

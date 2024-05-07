@@ -65,6 +65,7 @@ export const BirdForm = ({ handlerAddBird }) => {
       />
 
       <input type="hidden" name="id" value={id} />
+
       <button className="btn btn-primary" type="submit">
         {id > 0 ? "Editar" : "Crear"}
       </button>
