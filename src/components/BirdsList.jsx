@@ -5,6 +5,8 @@ export const BirdsList = ({
   birds = [],
   handlerRemoveBird,
   handlerBirdSelectedForm,
+  visibleForm,
+  handlerOpenForm,
 }) => {
   const [searchInput, setSearchInput] = useState("");
 
@@ -25,9 +27,16 @@ export const BirdsList = ({
               onChange={(e) => setSearchInput(e.target.value)}
             />
           </form>
-          <div className="col">
-            <button className="btn btn-primary my-2">Agregar especie</button>
-          </div>
+          {visibleForm || (
+            <div className="col">
+              <button
+                className="btn btn-primary my-2"
+                onClick={handlerOpenForm}
+              >
+                Agregar especie
+              </button>
+            </div>
+          )}
         </div>
 
         <table className="table table-hover table-striped rounded-3 border">

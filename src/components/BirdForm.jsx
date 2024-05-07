@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { useBirds } from "../hooks/useBirds";
 
-export const BirdForm = ({ handlerAddBird, birdSelected }) => {
+export const BirdForm = ({
+  handlerAddBird,
+  birdSelected,
+  handlerCloseForm,
+}) => {
   const { initialBirdForm } = useBirds();
   const [birdForm, setBirdForm] = useState(initialBirdForm);
   const { id, name, description, area, more } = birdForm;
@@ -35,6 +39,11 @@ export const BirdForm = ({ handlerAddBird, birdSelected }) => {
       ...birdSelected,
     });
   }, [birdSelected]);
+
+  const onCloseForm = () => {
+    handlerCloseForm();
+    setBirdForm(initialBirdForm);
+  };
 
   return (
     <form onSubmit={onSubmit}>
@@ -79,7 +88,7 @@ export const BirdForm = ({ handlerAddBird, birdSelected }) => {
       <button
         className="btn btn-primary mx-2"
         type="button"
-        /*onClick={onCloseForm}*/
+        onClick={onCloseForm}
       >
         Cerrar
       </button>

@@ -68,8 +68,7 @@ export const useBirds = () => {
       type: type,
       payload: bird,
     });
-    setVisibleForm(false);
-    setBirdSelected(initialBirdForm);
+    handlerCloseForm();
   };
 
   const handlerRemoveBird = (id) => {
@@ -86,6 +85,15 @@ export const useBirds = () => {
     setBirdSelected({ ...bird });
   };
 
+  const handlerOpenForm = () => {
+    setVisibleForm(true);
+  };
+
+  const handlerCloseForm = () => {
+    setVisibleForm(false);
+    setBirdSelected(initialBirdForm);
+  };
+
   return {
     birds,
     initialBirds,
@@ -98,5 +106,7 @@ export const useBirds = () => {
     handlerRemoveBird,
     handlerBirdSelectedForm,
     birdSelected,
+    handlerOpenForm,
+    handlerCloseForm,
   };
 };
