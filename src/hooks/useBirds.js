@@ -52,10 +52,19 @@ export const useBirds = () => {
   const [birds, dispatch] = useReducer(birdsReducer, initialBirds);
   const [birdSelected, setBirdSelected] = useState(initialBirdForm);
 
+  //------------- HANDLERADDBIRD FUNCIONA TANTO PARA AGREGAR COMO PARA EDITAR UN REGISTRO DE LA TABLA-------------------
   const handlerAddBird = (bird) => {
     console.log(bird);
+
+    let type;
+    if (bird.id === 0) {
+      type = "addBird";
+    } else {
+      type = "updateBird";
+    }
+
     dispatch({
-      type: "addBird",
+      type: type,
       payload: bird,
     });
   };

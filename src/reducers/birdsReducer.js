@@ -11,6 +11,16 @@ export const birdsReducer = (state = [], action) => {
     case "removeBird":
       return state.filter((user) => user.id !== action.payload);
 
+    case "updateBird":
+      return state.map((u) => {
+        if (u.id === action.payload.id) {
+          return {
+            ...action.payload,
+          };
+        }
+        return u;
+      });
+
     default:
       return state;
   }
