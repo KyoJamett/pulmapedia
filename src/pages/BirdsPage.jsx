@@ -3,6 +3,7 @@ import { BirdForm } from "../components/BirdForm";
 import { BirdsList } from "../components/BirdsList";
 import { useBirds } from "../hooks/useBirds";
 import { birdsReducer } from "../reducers/birdsReducer";
+import { BirdModalForm } from "../components/BirdModalForm";
 
 export function BirdsPage() {
   const {
@@ -22,6 +23,14 @@ export function BirdsPage() {
 
   return (
     <>
+      {!visibleForm || (
+        <BirdModalForm
+          birdSelected={birdSelected}
+          handlerCloseForm={handlerCloseForm}
+          handlerAddBird={handlerAddBird}
+        />
+      )}
+
       <div className="container my-4">
         <div className="row">
           {birds.length === 0 ? (
@@ -38,7 +47,7 @@ export function BirdsPage() {
             />
           )}
         </div>
-        {!visibleForm || (
+        {/*!visibleForm || (
           <div className="row">
             <BirdForm
               handlerAddBird={handlerAddBird}
@@ -46,7 +55,7 @@ export function BirdsPage() {
               handlerCloseForm={handlerCloseForm}
             />
           </div>
-        )}
+        )*/}
       </div>
     </>
   );
