@@ -10,7 +10,7 @@ export const BirdsList = ({
 }) => {
   const [searchInput, setSearchInput] = useState("");
 
-  console.log(searchInput);
+  //console.log(searchInput);
 
   return (
     <>
