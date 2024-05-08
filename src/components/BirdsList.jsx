@@ -15,8 +15,9 @@ export const BirdsList = ({
   return (
     <>
       <div className="table-responsive card">
+        <br></br>
         <h2>Lista de Especies</h2>
-
+        <br></br>
         <div className="col-4 mb-3">
           <form className="d-flex" role="search">
             <input
@@ -38,7 +39,6 @@ export const BirdsList = ({
             </div>
           )}
         </div>
-
         <table className="table table-hover table-striped rounded-3 border">
           <thead className="table-dark">
             <tr>

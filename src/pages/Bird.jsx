@@ -15,17 +15,18 @@ export const Bird = ({ birds = [], initialBirdSelected }) => {
   return (
     <>
       <div className="container my-4">
-        <h4>{birdSelected.name}</h4>
-        <div className="row">
+        <h3>{birdSelected.name}</h3>
+        <br></br>
+        <div className="col-md-8">
           <img
             src={images[birdSelected.name.toLowerCase()]}
             alt="bird"
             id="image_birds"
           />
         </div>
-
-        <div className="row">
-          <p>{birdSelected.more}</p>
+        <br></br>
+        <div className="col-md-6">
+          <p className="text-justify">{birdSelected.more}</p>
         </div>
       </div>
     </>
