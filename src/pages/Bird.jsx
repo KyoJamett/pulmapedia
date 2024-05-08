@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import images from "../images/images";
 
 export const Bird = ({ birds = [], initialBirdSelected }) => {
   const [birdSelected, setBirdSelected] = useState(initialBirdSelected);
@@ -15,6 +16,11 @@ export const Bird = ({ birds = [], initialBirdSelected }) => {
     <>
       <div className="container my-4">
         <h4>{birdSelected.name}</h4>
+        <img
+          src={images[birdSelected.name.toLowerCase()]}
+          alt="bird"
+          id="image_birds"
+        />
         <p>{birdSelected.more}</p>
       </div>
     </>

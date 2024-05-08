@@ -39,3 +39,7 @@
         opacity: 1
     }
 }
+
+#image_birds {
+    max-width: 30%;
+}
